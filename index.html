@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Empire Training Box — Small-Group Training in Auckland | Howick, Ōtara, Māngere</title>
+<meta name="description" content="Empire Training Box — outcome-driven, small-group classes in Auckland. Coached by Bunker instructors. Three locations: Howick, Ōtara, Māngere. Memberships, timetable, coaches and Hauora wellbeing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#101114; --bg-2:#17181c; --surface:#1d1e24; --surface-2:#24252d;
+    --ink:#f4f4f1; --ink-2:#b9bbc2; --line:#2e2f38;
+    --accent:#d7fd44; --accent-ink:#141503; --accent-dim:#b8dd2e;
+    --accent-2:#ff6a2b; --accent-3:#ff3d68; --accent-4:#ffb02e;
+    --grad-fire:linear-gradient(120deg,var(--accent) 0%,var(--accent-4) 48%,var(--accent-2) 78%,var(--accent-3) 100%);
+    --grad-btn:linear-gradient(120deg,#c9f52e 0%,var(--accent) 45%,#aee81f 100%);
+    --radius:14px; --shadow:0 18px 40px rgba(0,0,0,.45);
+    --glow:0 22px 48px rgba(215,253,68,.16),0 10px 26px rgba(255,106,43,.14);
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#f2f2ee; --bg-2:#e9e9e2; --surface:#ffffff; --surface-2:#f4f4ee;
+      --ink:#17181c; --ink-2:#55575e; --line:#dcdcd2;
+      --accent:#9ec400; --accent-ink:#101200; --accent-dim:#7d9c00;
+      --accent-2:#e85d1f; --accent-3:#d92b54; --accent-4:#d98a06;
+      --shadow:0 18px 40px rgba(20,20,10,.14);
+      --glow:0 22px 48px rgba(158,196,0,.20),0 10px 26px rgba(232,93,31,.16);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"Barlow",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+  h1,h2,h3,.cond{font-family:"Barlow Condensed","Barlow",sans-serif;text-transform:uppercase;letter-spacing:.01em}
+  h2{font-size:clamp(2rem,5vw,3rem);line-height:1.02;margin:0 0 .5rem}
+  h2 .fire{background:var(--grad-fire);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kicker{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:var(--accent-dim);font-size:.95rem;margin:0 0 .6rem}
+  .lede{color:var(--ink-2);font-size:clamp(1.02rem,2.4vw,1.2rem);max-width:640px}
+  section{padding:clamp(3rem,7vw,5rem) 0}
+  .btn{display:inline-block;padding:.85rem 1.5rem;border-radius:999px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:1rem}
+  .btn-lime{background:var(--grad-btn);color:var(--accent-ink);box-shadow:var(--glow)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--accent)}
+  /* draft ribbon */
+  .ribbon{background:#7a5b00;color:#fff8d6;text-align:center;font-size:.9rem;padding:.55rem 1rem}
+  .ribbon b{color:#ffe9a8}
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;gap:1rem;padding:.7rem 0}
+  .logo{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:.02em;text-decoration:none;text-transform:uppercase}
+  .logo span{color:var(--accent)}
+  .logo small{display:block;font-family:"Barlow",sans-serif;font-size:.62rem;letter-spacing:.28em;color:var(--ink-2);font-weight:600}
+  nav.links{margin-left:auto;display:flex;gap:1.1rem;align-items:center}
+  nav.links a{text-decoration:none;color:var(--ink-2);font-weight:600;font-size:.95rem}
+  nav.links a:hover{color:var(--ink)}
+  nav.links .btn{padding:.55rem 1.1rem;font-size:.95rem}
+  @media(max-width:760px){nav.links a:not(.btn){display:none}}
+  /* hero */
+  .hero{padding:clamp(2.5rem,6vw,4.5rem) 0 clamp(2rem,5vw,3.5rem);position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:-20% -10% auto;height:70%;background:radial-gradient(60% 60% at 70% 20%,rgba(215,253,68,.14),transparent 70%),radial-gradient(50% 50% at 15% 80%,rgba(255,106,43,.12),transparent 70%);pointer-events:none}
+  .hero-grid{display:grid;gap:2rem;align-items:center;position:relative}
+  @media(min-width:900px){.hero-grid{grid-template-columns:1.15fr .85fr}}
+  .hero h1{font-size:clamp(3rem,9vw,5.6rem);line-height:.95;margin:.2rem 0 1rem}
+  .hero h1 .fire{background:var(--grad-fire);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem}
+  .hero-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.6rem}
+  .chip{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.45rem .9rem;font-weight:600;font-size:.92rem}
+  .chip b{color:var(--accent)}
+  /* mascot */
+  .mascot-wrap{display:flex;flex-direction:column;align-items:center;gap:.6rem}
+  .mascot{width:min(300px,70vw);height:auto;filter:drop-shadow(0 24px 30px rgba(0,0,0,.4));animation:bob 3.6s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-12px) rotate(1.5deg)}}
+  .mascot .eye{transform-origin:center;transform-box:fill-box;animation:blink 4.2s infinite}
+  @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
+  .mascot-cap{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.14em;font-weight:600;color:var(--ink-2);font-size:.95rem;text-align:center}
+  .mascot-cap b{color:var(--accent)}
+  /* marquee */
+  .marquee{border-block:1px solid var(--line);background:var(--bg-2);overflow:hidden;padding:.7rem 0}
+  .marquee-track{display:flex;gap:2.5rem;white-space:nowrap;width:max-content;animation:scroll 26s linear infinite;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+  .marquee-track b{color:var(--accent)}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  /* cards */
+  .grid{display:grid;gap:1rem}
+  @media(min-width:640px){.grid.c2{grid-template-columns:1fr 1fr}}
+  @media(min-width:900px){.grid.c3{grid-template-columns:repeat(3,1fr)}.grid.c4{grid-template-columns:repeat(4,1fr)}}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem;box-shadow:var(--shadow)}
+  .card h3{margin:.2rem 0 .5rem;font-size:1.45rem}
+  .card p{margin:0;color:var(--ink-2)}
+  .card .icon{font-size:1.9rem;line-height:1}
+  .card .tag{display:inline-block;background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:.2rem .7rem;font-size:.82rem;font-weight:700;color:var(--accent-dim);margin-bottom:.6rem}
+  .card a.more{display:inline-block;margin-top:.9rem;font-weight:700;color:var(--accent-dim);text-decoration:none}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  /* hauora */
+  .hauora{background:var(--bg-2);border-block:1px solid var(--line)}
+  .hauora-grid{display:grid;gap:1rem}
+  @media(min-width:760px){.hauora-grid{grid-template-columns:1fr 1fr}}
+  /* locations */
+  .loc-card{display:flex;flex-direction:column;gap:.35rem}
+  .loc-card .addr{color:var(--ink-2)}
+  .loc-card .home{border-color:var(--accent);box-shadow:var(--glow)}
+  .loc-card a{color:var(--accent-dim);font-weight:600;text-decoration:none;overflow-wrap:anywhere}
+  /* faq */
+  details{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:.7rem}
+  summary{cursor:pointer;font-weight:700;font-size:1.05rem;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";float:right;color:var(--accent-dim);font-size:1.3rem;line-height:1}
+  details[open ] summary::after{content:"–"}
+  details p{color:var(--ink-2);margin:.6rem 0 0}
+  /* chat */
+  .chat-fab{position:fixed;right:1rem;bottom:1rem;z-index:60;background:var(--grad-btn);color:var(--accent-ink);border:0;border-radius:999px;padding:.85rem 1.3rem;font-weight:700;font-size:1rem;cursor:pointer;box-shadow:var(--glow)}
+  .chat-panel{position:fixed;right:1rem;bottom:4.6rem;z-index:60;width:min(360px,calc(100vw - 2rem));background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);display:none;flex-direction:column;overflow:hidden}
+  .chat-panel.open{display:flex}
+  .chat-head{background:var(--bg-2);padding:.9rem 1rem;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+  .chat-head small{display:block;font-weight:500;color:var(--ink-2);font-size:.8rem}
+  .chat-head button{background:none;border:0;color:var(--ink-2);font-size:1.3rem;cursor:pointer}
+  .chat-body{padding:1rem;display:flex;flex-direction:column;gap:.6rem;max-height:300px;overflow-y:auto}
+  .msg{max-width:88%;padding:.6rem .85rem;border-radius:12px;font-size:.95rem}
+  .msg.bot{background:var(--surface-2);align-self:flex-start}
+  .msg.me{background:var(--accent);color:var(--accent-ink);align-self:flex-end;font-weight:600}
+  .msg a{color:var(--accent-dim)}
+  .chat-quick{display:flex;gap:.4rem;flex-wrap:wrap;padding:0 1rem .6rem}
+  .chat-quick button{background:var(--surface-2);border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:.35rem .8rem;cursor:pointer;font-size:.85rem;font-weight:600}
+  .chat-form{display:flex;gap:.5rem;padding:.7rem 1rem;border-top:1px solid var(--line)}
+  .chat-form input{flex:1;background:var(--bg-2);border:1px solid var(--line);border-radius:999px;padding:.6rem .9rem;color:var(--ink);font-size:.95rem;min-width:0}
+  .chat-form button{background:var(--grad-btn);color:var(--accent-ink);border:0;border-radius:999px;padding:.6rem 1rem;font-weight:700;cursor:pointer}
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:2.2rem 0 3rem;color:var(--ink-2);font-size:.95rem}
+  footer .fine{font-size:.85rem;opacity:.85}
+  footer a{color:var(--accent-dim)}
+</style>
+</head>
+<body>
+
+<div class="ribbon">Free sample draft by <b>Ranvir Digital</b> for Empire Training Box — 1-page website $35, Google Business Profile $25, as quoted. Nothing here is final until Lama confirms the services, prices and class times.</div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top">Empire<span> Training Box</span><small>Auckland · Howick · Ōtara · Māngere</small></a>
+    <nav class="links" aria-label="Main">
+      <a href="#train">Train</a>
+      <a href="#services">Services</a>
+      <a href="#hauora">Hauora</a>
+      <a href="#locations">Locations</a>
+      <a class="btn btn-lime" href="#visit">Visit Howick</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker">Empire East Auckland · Howick</p>
+        <h1>Train hard.<br><span class="fire">Belong here.</span></h1>
+        <p class="lede">Outcome-driven, small-group classes in Auckland — coached, welcoming, and built around community. Come as you are; hard work, resilience and having fun are what we value.</p>
+        <div class="hero-cta">
+          <a class="btn btn-lime" href="#visit">Visit us in Howick</a>
+          <a class="btn btn-ghost" href="#locations">See all 3 locations</a>
+        </div>
+        <div class="hero-chips">
+          <span class="chip"><b>3</b> Auckland locations</span>
+          <span class="chip">Small-group classes</span>
+          <span class="chip">Hauora wellbeing</span>
+        </div>
+      </div>
+      <div class="mascot-wrap">
+        <!-- Kettlebell mascot: pure SVG, blinks and bobs -->
+        <svg class="mascot" viewBox="0 0 300 300" role="img" aria-label="Empire kettlebell mascot">
+          <defs>
+            <linearGradient id="kb" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#d7fd44"/><stop offset=".55" stop-color="#ffb02e"/><stop offset="1" stop-color="#ff6a2b"/>
+            </linearGradient>
+          </defs>
+          <path d="M150 38c-38 0-66 26-70 62 22-8 44-12 70-12s48 4 70 12c-4-36-32-62-70-62z" fill="none" stroke="url(#kb)" stroke-width="16" stroke-linecap="round"/>
+          <circle cx="150" cy="188" r="82" fill="url(#kb)"/>
+          <circle cx="150" cy="188" r="82" fill="none" stroke="#141503" stroke-opacity=".25" stroke-width="4"/>
+          <ellipse class="eye" cx="122" cy="172" rx="11" ry="14" fill="#141503"/>
+          <ellipse class="eye" cx="178" cy="172" rx="11" ry="14" fill="#141503"/>
+          <path d="M126 208q24 18 48 0" fill="none" stroke="#141503" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="104" cy="150" r="9" fill="#ff3d68" opacity=".85"/>
+          <circle cx="198" cy="150" r="9" fill="#ff3d68" opacity=".85"/>
+        </svg>
+        <p class="mascot-cap">Coached, not just counted in — <b>every class, every member</b></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Community <b>·</b> Integrity <b>·</b> Respect <b>·</b> Hard Work <b>·</b> Resilience <b>·</b> Having Fun <b>·</b>&nbsp;</span>
+      <span>Community <b>·</b> Integrity <b>·</b> Respect <b>·</b> Hard Work <b>·</b> Resilience <b>·</b> Having Fun <b>·</b>&nbsp;</span>
+    </div>
+  </div>
+
+  <section id="train">
+    <div class="wrap">
+      <p class="kicker">Train with us</p>
+      <h2>Small groups. <span class="fire">Real coaching.</span></h2>
+      <p class="lede">Classes are led by our Bunker instructors — so you are coached, not just counted in. Whatever your starting point, you train alongside people who show up for each other.</p>
+      <div class="grid c3" style="margin-top:1.8rem">
+        <div class="card reveal"><div class="icon">🏋️</div><h3>Small-group classes</h3><p>Outcome-driven sessions in small groups, so the coach actually sees you — your form, your effort, your progress.</p></div>
+        <div class="card reveal"><div class="icon">🤝</div><h3>Come as you are</h3><p>No egos, no judgement. Hard work, resilience and having fun matter here — along with community, integrity and respect.</p></div>
+        <div class="card reveal"><div class="icon">📍</div><h3>Three places to train</h3><p>Howick, Ōtara and Māngere — one Empire whānau across Auckland. Start at the location closest to you.</p><a class="more" href="#locations">Find your location →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="background:var(--bg-2);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <p class="kicker">What we offer</p>
+      <h2>Everything you need, <span class="fire">on one page.</span></h2>
+      <p class="lede">Memberships, class times, coaches and wellbeing — ask us about any of them and we will point you to the right option for you.</p>
+      <div class="grid c4" style="margin-top:1.8rem">
+        <div class="card reveal"><span class="tag">Memberships</span><div class="icon">🎟️</div><h3>Memberships</h3><p>Options differ by location, so we confirm the right one with you in person — no guessing, no wrong plan.</p><a class="more" href="mailto:empireeastauckland@gmail.com">Ask about memberships →</a></div>
+        <div class="card reveal"><span class="tag">Timetable</span><div class="icon">🗓️</div><h3>Class timetable</h3><p>Class times run through the week across our locations. Confirm the current timetable with us before your first visit.</p><a class="more" href="#faq">When are classes? →</a></div>
+        <div class="card reveal"><span class="tag">Coaches</span><div class="icon">💪</div><h3>Our coaches</h3><p>Trained by our Bunker instructors — coaching that corrects, encourages and pushes you a little further every session.</p><a class="more" href="#visit">Meet us in Howick →</a></div>
+        <div class="card reveal"><span class="tag">Hauora</span><div class="icon">🌿</div><h3>Hauora — wellbeing</h3><p>Wellbeing that continues outside class, with SHIFT Nutrition and Ready Made Meals.</p><a class="more" href="#hauora">How Hauora works →</a></div>
+      </div>
+      <p style="margin-top:1.4rem;color:var(--ink-2)" class="reveal"><b style="color:var(--ink)">No prices listed — on purpose.</b> Empire does not publish prices on its current site, and this draft does not invent any. Membership prices are confirmed with you directly.</p>
+    </div>
+  </section>
+
+  <section id="hauora" class="hauora">
+    <div class="wrap">
+      <p class="kicker">Hauora — wellbeing</p>
+      <h2>Wellbeing, <span class="fire">beyond the workout.</span></h2>
+      <p class="lede">Training is only part of the picture. Empire's Hauora support keeps you going outside class too.</p>
+      <div class="hauora-grid" style="margin-top:1.8rem">
+        <div class="card reveal"><div class="icon">🥗</div><h3>SHIFT Nutrition</h3><p>Nutrition guidance that fits real life — simple, sustainable eating to support your training, not a crash plan.</p></div>
+        <div class="card reveal"><div class="icon">🍱</div><h3>Ready Made Meals</h3><p>Ready made meals for busy weeks, so good food does not depend on having time to cook.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="locations">
+    <div class="wrap">
+      <p class="kicker">Three Auckland locations</p>
+      <h2>Find your <span class="fire">Empire.</span></h2>
+      <p class="lede">One whānau, three homes across Auckland. Howick is our East Auckland home — start there, or at the location closest to you.</p>
+      <div class="grid c3" style="margin-top:1.8rem">
+        <div class="card loc-card home reveal">
+          <span class="tag">★ East Auckland home</span>
+          <h3>Howick — Empire East</h3>
+          <p class="addr">63 Union Road, Howick,<br>Auckland 2022</p>
+          <a href="tel:+642102350781">021 023 50781</a>
+          <a href="mailto:empireeastauckland@gmail.com">empireeastauckland@gmail.com</a>
+        </div>
+        <div class="card loc-card reveal">
+          <span class="tag">South Auckland</span>
+          <h3>Ōtara</h3>
+          <p class="addr">6/100 Alexander Crescent,<br>Ōtara</p>
+          <a href="tel:+642102350781">021 0235 0781</a>
+          <a href="mailto:empirefitness1@gmail.com">empirefitness1@gmail.com</a>
+        </div>
+        <div class="card loc-card reveal">
+          <span class="tag">South Auckland</span>
+          <h3>Māngere</h3>
+          <p class="addr">39B Rennie Drive,<br>Māngere</p>
+          <a href="tel:+642102945789">021 029 45789</a>
+          <a href="mailto:empirefitnessmangere@gmail.com">empirefitnessmangere@gmail.com</a>
+        </div>
+      </div>
+      <p style="margin-top:1.4rem;color:var(--ink-2)" class="reveal">Website: <a href="https://www.empiretrainingbox.co.nz/" style="color:var(--accent-dim);font-weight:600">empiretrainingbox.co.nz</a> · Instagram: <a href="https://www.instagram.com/empireeastauckland/" style="color:var(--accent-dim);font-weight:600">@empireeastauckland</a></p>
+    </div>
+  </section>
+
+  <section id="faq" style="background:var(--bg-2);border-block:1px solid var(--line)">
+    <div class="wrap" style="max-width:820px">
+      <p class="kicker">Ask us</p>
+      <h2>Before your <span class="fire">first visit.</span></h2>
+      <div style="margin-top:1.6rem">
+        <details class="reveal"><summary>What do memberships cost?</summary><p>Memberships differ by location, so we confirm the right option with you directly. Call Howick on <a href="tel:+642102350781">021 023 50781</a> or email <a href="mailto:empireeastauckland@gmail.com">empireeastauckland@gmail.com</a> and we will confirm the price for you — this page lists no invented prices.</p></details>
+        <details class="reveal"><summary>When are classes?</summary><p>Class times are on our timetable and can change, so confirm the current timetable with us before your first visit. Email or call your nearest location and we will tell you the next class that fits you.</p></details>
+        <details class="reveal"><summary>Do I need experience to join?</summary><p>No. Come as you are — classes are small-group and coached, so the instructor adapts the session to you. Hard work and showing up matter more than where you start.</p></details>
+        <details class="reveal"><summary>Where are you?</summary><p>Three Auckland locations: Howick (63 Union Road), Ōtara (6/100 Alexander Crescent) and Māngere (39B Rennie Drive). Howick is our East Auckland home.</p></details>
+        <details class="reveal"><summary>What is Hauora?</summary><p>Hauora is wellbeing beyond the workout — including SHIFT Nutrition and Ready Made Meals, so your progress continues outside class.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="wrap" style="text-align:center">
+      <p class="kicker" style="text-align:center">Ready when you are</p>
+      <h2 style="text-align:center">Come train <span class="fire">with Empire.</span></h2>
+      <p class="lede" style="margin-inline:auto;text-align:center">Drop into Howick, call us, or send an email — we will confirm memberships, class times and the best first session for you.</p>
+      <div class="hero-cta" style="justify-content:center">
+        <a class="btn btn-lime" href="tel:+642102350781">Call Howick — 021 023 50781</a>
+        <a class="btn btn-ghost" href="mailto:empireeastauckland@gmail.com">Email us</a>
+      </div>
+      <p style="margin-top:1.2rem;color:var(--ink-2)">63 Union Road, Howick, Auckland 2022 · <a href="https://www.instagram.com/empireeastauckland/" style="color:var(--accent-dim);font-weight:600">@empireeastauckland</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:var(--ink)">Empire Training Box</b> — Howick · Ōtara · Māngere, Auckland. <a href="https://www.empiretrainingbox.co.nz/">empiretrainingbox.co.nz</a></p>
+    <p class="fine">Free sample draft by Ranvir Digital — 1-page website $35, Google Business Profile setup $25, as quoted to Lama Saga. No prices, class times or coach names have been invented: this draft uses only facts from Empire's own site, and anything still to confirm is marked as such. Nothing is final until Lama confirms the services, prices and class times.</p>
+    <p class="fine">Draft prepared for Lama Saga · Ranvir Digital · <a href="mailto:jbree825@gmail.com">jbree825@gmail.com</a> · Portfolio: <a href="https://jbree825.github.io/ranvirdigital/">jbree825.github.io/ranvirdigital</a></p>
+  </div>
+</footer>
+
+<button class="chat-fab" id="chatFab" aria-label="Ask Empire">💬 Ask Empire</button>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Ask Empire chat">
+  <div class="chat-head"><span>Ask Empire<small>Demo assistant — answers from this page only</small></span><button id="chatClose" aria-label="Close chat">✕</button></div>
+  <div class="chat-body" id="chatBody">
+    <div class="msg bot">Kia ora! Ask me about memberships, class times, coaches, Hauora or our three locations.</div>
+  </div>
+  <div class="chat-quick">
+    <button data-q="memberships">Memberships</button>
+    <button data-q="class times">Class times</button>
+    <button data-q="locations">Locations</button>
+    <button data-q="hauora">Hauora</button>
+  </div>
+  <form class="chat-form" id="chatForm">
+    <input id="chatInput" type="text" placeholder="Ask about Empire…" autocomplete="off" aria-label="Your question">
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Chat assistant: static keyword answers from this page's own facts only.
+  const fab = document.getElementById('chatFab'),
+        panel = document.getElementById('chatPanel'),
+        body = document.getElementById('chatBody'),
+        form = document.getElementById('chatForm'),
+        input = document.getElementById('chatInput');
+  fab.addEventListener('click', () => { panel.classList.toggle('open'); input.focus(); });
+  document.getElementById('chatClose').addEventListener('click', () => panel.classList.remove('open'));
+  function addMsg(text, who) {
+    const d = document.createElement('div');
+    d.className = 'msg ' + who; d.innerHTML = text;
+    body.appendChild(d); body.scrollTop = body.scrollHeight;
+  }
+  function answer(q) {
+    const s = q.toLowerCase();
+    if (/(price|cost|membership|join|fee)/.test(s))
+      return 'Memberships differ by location and we do not list prices here — call Howick on <a href="tel:+642102350781">021 023 50781</a> or email <a href="mailto:empireeastauckland@gmail.com">empireeastauckland@gmail.com</a> and we will confirm the right option for you.';
+    if (/(time|timetable|class|schedule|when)/.test(s))
+      return 'Class times are on our timetable and can change — confirm the current times with us before your first visit. Call or email your nearest location and we will tell you the next class that fits you.';
+    if (/(where|location|howick|otara|mangere|address)/.test(s))
+      return 'Three Auckland locations: Howick — 63 Union Road; Ōtara — 6/100 Alexander Crescent; Māngere — 39B Rennie Drive. Howick is our East Auckland home.';
+    if (/(coach|bunker|trainer|instructor)/.test(s))
+      return 'Classes are led by our Bunker instructors — small groups, so you are coached, not just counted in.';
+    if (/(hauora|nutrition|food|meal|wellbeing|shift)/.test(s))
+      return 'Hauora is wellbeing beyond the workout — including SHIFT Nutrition and Ready Made Meals.';
+    if (/(contact|phone|email|call)/.test(s))
+      return 'Howick: <a href="tel:+642102350781">021 023 50781</a>, <a href="mailto:empireeastauckland@gmail.com">empireeastauckland@gmail.com</a>. You can also find us on Instagram as <a href="https://www.instagram.com/empireeastauckland/">@empireeastauckland</a>.';
+    if (/(hi|hello|kia ora|hey)\b/.test(s))
+      return 'Kia ora! Ask me about memberships, class times, coaches, Hauora or our three locations.';
+    return 'Good question — that is not on this page yet. Email <a href="mailto:empireeastauckland@gmail.com">empireeastauckland@gmail.com</a> or call Howick on <a href="tel:+642102350781">021 023 50781</a> and the team will confirm it for you.';
+  }
+  function ask(q) {
+    if (!q.trim()) return;
+    addMsg(q.replace(/</g, '&lt;'), 'me');
+    setTimeout(() => addMsg(answer(q), 'bot'), 350);
+  }
+  form.addEventListener('submit', e => { e.preventDefault(); const q = input.value; input.value = ''; ask(q); });
+  document.querySelectorAll('.chat-quick button').forEach(b =>
+    b.addEventListener('click', () => ask(b.dataset.q)));
+</script>
+</body>
+</html>
